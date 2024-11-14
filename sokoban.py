@@ -16,10 +16,10 @@ import movimiento as mv
 
 
 def limpiar_pantalla():
-"""
+    """
     Esta función limpia la pantalla en función del sistema operativo.
     usando el comando 'cls' y 'clear'.
-"""
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 # 1 imprimir el tablero
