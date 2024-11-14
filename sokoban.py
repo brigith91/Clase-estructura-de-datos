@@ -181,7 +181,7 @@ def juego():
         imprimir_tablero(tab)
         direccion = leer_direccion()
 
-    print('Gracias por jugar')
+    print('Ganaste')
 
 
 juego()
