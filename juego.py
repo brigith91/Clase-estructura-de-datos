@@ -125,5 +125,20 @@ def juego():
 
     print('Chao')
 
-juego()
+def menu():
+    print('--------------------------------')
+    print( '1. Iniciar juego nuevo')
+    print( '2. salir')
+    print('--------------------------------')
+    opt = input('ingrese la operacion de preferancia: ')
+
+    if opt == '1':
+        juego()
+    elif opt == '2':
+        print('nos vemmops la proxima: ')
+    else:
+        print('opcion no valida')
+        menu()
+
+menu()
 
