@@ -1,5 +1,5 @@
 import board
-import movimiento_juego_recorrido as mv
+import movimiento as mv
 import os
 
 
