@@ -185,3 +185,99 @@ def juego():
 
 
 juego()
+
+def manual(idioma): 
+    """
+    Muestra el manual del juego en el idioma seleccionado.
+    
+    Args:
+    idioma (str): El idioma en el que se debe mostrar el manual. 
+    Puede ser 'es' para español o 'en' para inglés.
+    
+    El manual incluye una breve descripción del juego y la explicación de los elementos del tablero.
+    Los elementos incluyen la pared, las cajas, los destinos, el jugador, los espacios vacíos, y los objetos en destino.
+    """
+
+    menu_manual = {
+        'es' : {
+            'desc': 'El juego consiste en recorrer todo el tablero ',
+            elemento.PARED :    'Esta es la pared ',
+            elemento.CAJA :     'Esta es la caja',
+            elemento.DESTINO :  'Este es el destino',
+            elemento.JUGADOR :  'Este es el jugador',
+            elemento.ESP_VAC :  'Este es el espacio vacío',
+            elemento.CAJ_DEST : 'Esta es la caja en destino',
+            elemento.JUG_DEST : 'Este el jugador en destino',
+        },
+
+        'en' : {
+            'desc':' You have to move around the full board',
+            elemento.PARED :   'This is the wall',
+            elemento.CAJA :    'This is the box',
+            elemento.DESTINO : 'This is the destination',
+            elemento.JUGADOR : 'This is the player',
+            elemento.ESP_VAC : 'This is the empty space',
+            elemento.CAJ_DEST :'This is the box at the destinationl',
+            elemento.JUG_DEST :'This the player at the destination',
+        },
+
+    }
+
+    for k in menu_manual[idioma]:
+        if k != 'desc':
+            print(f'\t{k} - {menu_manual[idioma][k]}')
+        else:
+            print(menu_manual[idioma])
+    
+    input()
+
+
+def menu():
+    """
+    Muestra el menú principal y permite al jugador seleccionar una operación.El menú ofrece 3 opciones :
+    
+    El idioma del menú es seleccionado por el jugador al inicio y puede ser español ('es') o inglés ('en').
+    Según la selección, las opciones y los mensajes se muestran en el idioma correspondiente.
+    """
+    mi_menu = {
+        'es' : {
+        '1' : 'Iniciar juego nuevo',
+        '2' : 'Ver manual de juego',
+        '3' : 'Salida'
+        },
+        'en' : {
+        '1' : 'Start new game',
+        '2' : 'Show manual',
+        '3' : 'Exit'
+        },
+    }
+    print('--------------------------------')
+    lang = input('Indique el idioma (en/es): ').lower()
+
+    if lang not in mi_menu:
+        print('Idioma no válido. Por favor, ingrese "en" o "es".')
+        menu()  # Si el idioma no es válido, vuelve a mostrar el menú
+        return
+
+    for k in mi_menu[lang]:
+        print(f'{k}, {mi_menu[lang][k]} ')
+
+    print('--------------------------------')
+    if lang == 'es':
+        opt = input('Ingrese la operación de preferencia: ').upper()
+    else:
+        opt = input('Enter your preferred operation: ').upper() 
+
+
+    if opt == '1':
+        juego()
+    if opt == '2':
+        manual(lang)
+    elif opt == '3':
+         print('Nos vemos la próxima.' if lang == 'es' else 'See you next time.')
+    else:
+        print('Opción no válida' if lang == 'es' else 'Invalid option')
+        menu()
+
+menu()
+
