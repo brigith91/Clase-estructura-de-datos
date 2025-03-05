@@ -1,4 +1,4 @@
-from pruebassof.pruebasoftware.test_ejercicio3 import validar_email 
+from pruebasoftware.test_ejercicio3 import validar_email() 
 
 def test_email_formato_correcto_juan_perez():
     correo_prueba = "juan.perez@empresa.com"
