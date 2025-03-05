@@ -1,6 +1,6 @@
-from pruebasoftware.test_ejercicio3 import validar_email()
+from pruebasoftware.test_ejercicio3 import validar_email
 
 print("Ejecutando pruebas...")
-validar_email()
+validar_email('hola')
 print("Pruebas finalizadas.")
 
